@@ -1,0 +1,20 @@
+import * from "apt.ab"
+
+pub fun gum_install() {
+    silent trust $ mkdir -p /etc/apt/keyrings $
+    silent trust $ curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/charm.gpg $
+    silent trust $ echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list $
+    silent trust $ apt update -y $
+    silent trust $ apt install gum -y $
+}
+
+pub fun gum_style(text: Text, foreground: Num = -1, background: Num = -1) : Null {
+    let foreground = foreground > -1 then "--foreground {foreground}" else ""
+    let background = background > -1 then "--background {background}" else ""
+    trust $ gum style {foreground} "{text}" $
+}
+
+pub fun gum_spin(title: Text, command: Text, verbose: Bool = false, spiner: Text = "dot") : Null {
+    let verbose = verbose then "--show-output" else ""
+    trust $ gum spin {verbose} --spinner {spiner} --title "{title}" -- {command} $
+}

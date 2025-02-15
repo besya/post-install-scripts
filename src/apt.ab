@@ -1,0 +1,50 @@
+import * from "std/text"
+
+// Commands
+
+pub fun apt_add_repository_command(repository: Text) : Text {
+    return "add-apt-repository {repository}"
+}
+
+pub fun apt_add_repositories_command(repositories: [Text]) : Text {
+    let commands = [Text]
+    for repository in repositories {
+        commands += [apt_add_repository_command(repository)]
+    }
+
+    return join(commands, " && ")
+}
+
+pub fun apt_update_command() : Text {
+    return "apt update"
+}
+
+pub fun apt_upgrade_command() : Text {
+    return "apt upgrade"
+}
+
+pub fun apt_install_command(packages: [Text]) : Text {
+    return "apt install {join(packages, " ")}"
+}
+
+// Executors
+
+pub fun apt_add_repository(repository: Text) : Null {
+    trust $ {apt_add_repository_command(repository)} -y $
+}
+
+pub fun apt_add_repositories(repositories: [Text]) : Null {
+    trust $ {apt_add_repositories_command(repositories)} -y $
+}
+
+pub fun apt_update() {
+    trust $ {apt_update_command()} -y $
+}
+
+pub fun apt_upgrade() {
+    trust $ {apt_upgrade_command()} -y $
+}
+
+pub fun apt_install(packages: [Text]) : Null {
+    trust $ {apt_install_command(packages)} -y $
+}

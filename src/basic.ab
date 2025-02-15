@@ -1,0 +1,38 @@
+import * from "apt.ab"
+import * from "gum.ab"
+
+gum_install()
+
+let repositories = [
+    "ppa:maveonair/helix-editor"
+]
+
+let packages = [
+    "helix",
+    "btop"
+]
+
+let color = 212
+let success = 150
+
+gum_style("Add repositories", color)
+for repository in repositories {
+    gum_spin(repository, apt_add_repository_command(repository) + " -y")
+    gum_style(" • {repository}", success)
+}
+
+gum_style("Update repositories", color)
+gum_spin("Processing...", apt_update_command() + " -y")
+
+gum_style("Upgrade packages", color)
+gum_spin("Processing...", apt_upgrade_command() + " -y")
+
+gum_style("Install packages", color)
+for package in packages {
+    gum_spin(package, apt_install_command([package]) + " -y")
+    gum_style(" • {package}", success)
+}
+
+
+
+
