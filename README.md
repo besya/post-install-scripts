@@ -8,5 +8,5 @@
 - btop
 
 ```
-bash <(curl -s "https://raw.githubusercontent.com/besya/post-install-scripts/main/build/basic.sh")
+curl -s "https://raw.githubusercontent.com/besya/post-install-scripts/main/build/basic.sh" | sudo bash
 ```
