@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Written in [Amber](https://amber-lang.com/)
 # version: 0.4.0-alpha
-# date: 2025-02-15 20:18:28
+# date: 2025-02-18 12:20:49
 join__6_v0() {
     local list=("${!1}")
     local delimiter=$2
@@ -67,50 +67,50 @@ __AF_gum_install86_v0__4_1="$__AF_gum_install86_v0";
 echo "$__AF_gum_install86_v0__4_1" > /dev/null 2>&1
 __AMBER_ARRAY_1=("ppa:maveonair/helix-editor");
 __0_repositories=("${__AMBER_ARRAY_1[@]}")
-__AMBER_ARRAY_2=("helix" "btop");
+__AMBER_ARRAY_2=("fail2ban" "helix" "btop");
 __1_packages=("${__AMBER_ARRAY_2[@]}")
 __2_color=212
 __3_success=150
 gum_style__87_v0 "Add repositories" ${__2_color} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
-__AF_gum_style87_v0__18_1="$__AF_gum_style87_v0";
-echo "$__AF_gum_style87_v0__18_1" > /dev/null 2>&1
+__AF_gum_style87_v0__19_1="$__AF_gum_style87_v0";
+echo "$__AF_gum_style87_v0__19_1" > /dev/null 2>&1
 for repository in "${__0_repositories[@]}"; do
     apt_add_repository_command__56_v0 "${repository}";
-    __AF_apt_add_repository_command56_v0__20_26="${__AF_apt_add_repository_command56_v0}";
-    gum_spin__88_v0 "${repository}" "${__AF_apt_add_repository_command56_v0__20_26}"" -y" 0 "dot";
-    __AF_gum_spin88_v0__20_5="$__AF_gum_spin88_v0";
-    echo "$__AF_gum_spin88_v0__20_5" > /dev/null 2>&1
+    __AF_apt_add_repository_command56_v0__21_26="${__AF_apt_add_repository_command56_v0}";
+    gum_spin__88_v0 "${repository}" "${__AF_apt_add_repository_command56_v0__21_26}"" -y" 0 "dot";
+    __AF_gum_spin88_v0__21_5="$__AF_gum_spin88_v0";
+    echo "$__AF_gum_spin88_v0__21_5" > /dev/null 2>&1
     gum_style__87_v0 " • ${repository}" ${__3_success} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
-    __AF_gum_style87_v0__21_5="$__AF_gum_style87_v0";
-    echo "$__AF_gum_style87_v0__21_5" > /dev/null 2>&1
+    __AF_gum_style87_v0__22_5="$__AF_gum_style87_v0";
+    echo "$__AF_gum_style87_v0__22_5" > /dev/null 2>&1
 done
 gum_style__87_v0 "Update repositories" ${__2_color} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
-__AF_gum_style87_v0__24_1="$__AF_gum_style87_v0";
-echo "$__AF_gum_style87_v0__24_1" > /dev/null 2>&1
+__AF_gum_style87_v0__25_1="$__AF_gum_style87_v0";
+echo "$__AF_gum_style87_v0__25_1" > /dev/null 2>&1
 apt_update_command__58_v0 ;
-__AF_apt_update_command58_v0__25_27="${__AF_apt_update_command58_v0}";
-gum_spin__88_v0 "Processing..." "${__AF_apt_update_command58_v0__25_27}"" -y" 0 "dot";
-__AF_gum_spin88_v0__25_1="$__AF_gum_spin88_v0";
-echo "$__AF_gum_spin88_v0__25_1" > /dev/null 2>&1
+__AF_apt_update_command58_v0__26_27="${__AF_apt_update_command58_v0}";
+gum_spin__88_v0 "Processing..." "${__AF_apt_update_command58_v0__26_27}"" -y" 0 "dot";
+__AF_gum_spin88_v0__26_1="$__AF_gum_spin88_v0";
+echo "$__AF_gum_spin88_v0__26_1" > /dev/null 2>&1
 gum_style__87_v0 "Upgrade packages" ${__2_color} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
-__AF_gum_style87_v0__27_1="$__AF_gum_style87_v0";
-echo "$__AF_gum_style87_v0__27_1" > /dev/null 2>&1
+__AF_gum_style87_v0__28_1="$__AF_gum_style87_v0";
+echo "$__AF_gum_style87_v0__28_1" > /dev/null 2>&1
 apt_upgrade_command__59_v0 ;
-__AF_apt_upgrade_command59_v0__28_27="${__AF_apt_upgrade_command59_v0}";
-gum_spin__88_v0 "Processing..." "${__AF_apt_upgrade_command59_v0__28_27}"" -y" 0 "dot";
-__AF_gum_spin88_v0__28_1="$__AF_gum_spin88_v0";
-echo "$__AF_gum_spin88_v0__28_1" > /dev/null 2>&1
+__AF_apt_upgrade_command59_v0__29_27="${__AF_apt_upgrade_command59_v0}";
+gum_spin__88_v0 "Processing..." "${__AF_apt_upgrade_command59_v0__29_27}"" -y" 0 "dot";
+__AF_gum_spin88_v0__29_1="$__AF_gum_spin88_v0";
+echo "$__AF_gum_spin88_v0__29_1" > /dev/null 2>&1
 gum_style__87_v0 "Install packages" ${__2_color} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
-__AF_gum_style87_v0__30_1="$__AF_gum_style87_v0";
-echo "$__AF_gum_style87_v0__30_1" > /dev/null 2>&1
+__AF_gum_style87_v0__31_1="$__AF_gum_style87_v0";
+echo "$__AF_gum_style87_v0__31_1" > /dev/null 2>&1
 for package in "${__1_packages[@]}"; do
     __AMBER_ARRAY_3=("${package}");
     apt_install_command__60_v0 __AMBER_ARRAY_3[@];
-    __AF_apt_install_command60_v0__32_23="${__AF_apt_install_command60_v0}";
-    gum_spin__88_v0 "${package}" "${__AF_apt_install_command60_v0__32_23}"" -y" 0 "dot";
-    __AF_gum_spin88_v0__32_5="$__AF_gum_spin88_v0";
-    echo "$__AF_gum_spin88_v0__32_5" > /dev/null 2>&1
+    __AF_apt_install_command60_v0__33_23="${__AF_apt_install_command60_v0}";
+    gum_spin__88_v0 "${package}" "${__AF_apt_install_command60_v0__33_23}"" -y" 0 "dot";
+    __AF_gum_spin88_v0__33_5="$__AF_gum_spin88_v0";
+    echo "$__AF_gum_spin88_v0__33_5" > /dev/null 2>&1
     gum_style__87_v0 " • ${package}" ${__3_success} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
-    __AF_gum_style87_v0__33_5="$__AF_gum_style87_v0";
-    echo "$__AF_gum_style87_v0__33_5" > /dev/null 2>&1
+    __AF_gum_style87_v0__34_5="$__AF_gum_style87_v0";
+    echo "$__AF_gum_style87_v0__34_5" > /dev/null 2>&1
 done
