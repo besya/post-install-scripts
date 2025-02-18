@@ -16,6 +16,12 @@ let packages = [
 let color = 212
 let success = 150
 
+gum_style("Configure firewall", color)
+gum_spin(" • Allow 22/tcp", "ufw allow 22/tcp")
+gum_spin(" • Allow 80/tcp", "ufw allow 80/tcp")
+gum_spin(" • Allow 443/tcp", "ufw allow 443/tcp")
+gum_spin(" • Enable", "ufw enable")
+
 gum_style("Add repositories", color)
 for repository in repositories {
     gum_spin(repository, apt_add_repository_command(repository) + " -y")

@@ -2,6 +2,10 @@
 
 ## Basic
 
+### Firewall
+
+Allow 22, 80 and 443 tcp ports
+
 ### Packages
 
 - fail2ban
