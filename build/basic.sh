@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Written in [Amber](https://amber-lang.com/)
 # version: 0.4.0-alpha
-# date: 2025-02-18 15:47:04
+# date: 2025-02-18 15:56:38
 join__6_v0() {
     local list=("${!1}")
     local delimiter=$2
@@ -92,10 +92,12 @@ echo "$__AF_gum_spin88_v0__24_1" > /dev/null 2>&1
 gum_style__87_v0 " • Allowed 443/tcp " ${__3_success} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
 __AF_gum_style87_v0__25_1="$__AF_gum_style87_v0";
 echo "$__AF_gum_style87_v0__25_1" > /dev/null 2>&1
-gum_spin__88_v0 "Enable" "ufw enable" 0 "dot";
+gum_spin__88_v0 "Enable" "ufw --force enable" 1 "dot";
 __AF_gum_spin88_v0__26_1="$__AF_gum_spin88_v0";
 echo "$__AF_gum_spin88_v0__26_1" > /dev/null 2>&1
-gum_style__87_v0 "Firewall enabled" ${__3_success} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
+__AMBER_VAL_3=$( ufw status );
+__AS=$?;
+gum_style__87_v0 " • ${__AMBER_VAL_3}" ${__3_success} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
 __AF_gum_style87_v0__27_1="$__AF_gum_style87_v0";
 echo "$__AF_gum_style87_v0__27_1" > /dev/null 2>&1
 gum_style__87_v0 "Add repositories" ${__2_color} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
@@ -131,8 +133,8 @@ gum_style__87_v0 "Install packages" ${__2_color} $(echo  '-' 1 | bc -l | sed '/\
 __AF_gum_style87_v0__41_1="$__AF_gum_style87_v0";
 echo "$__AF_gum_style87_v0__41_1" > /dev/null 2>&1
 for package in "${__1_packages[@]}"; do
-    __AMBER_ARRAY_3=("${package}");
-    apt_install_command__60_v0 __AMBER_ARRAY_3[@];
+    __AMBER_ARRAY_4=("${package}");
+    apt_install_command__60_v0 __AMBER_ARRAY_4[@];
     __AF_apt_install_command60_v0__43_23="${__AF_apt_install_command60_v0}";
     gum_spin__88_v0 "${package}" "${__AF_apt_install_command60_v0__43_23}"" -y" 0 "dot";
     __AF_gum_spin88_v0__43_5="$__AF_gum_spin88_v0";

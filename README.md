@@ -14,4 +14,6 @@ Allow 22, 80 and 443 tcp ports
 
 ```
 curl -s "https://raw.githubusercontent.com/besya/post-install-scripts/main/build/basic.sh" | bash
+
+curl -s "https://raw.githubusercontent.com/besya/post-install-scripts/refs/heads/main/build/basic.sh" | bash
 ```

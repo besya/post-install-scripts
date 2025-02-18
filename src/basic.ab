@@ -23,8 +23,8 @@ gum_spin("Allowing 80/tcp", "ufw allow 80/tcp")
 gum_style(" • Allowed 80/tcp ", success)
 gum_spin("Allowing 443/tcp", "ufw allow 443/tcp")
 gum_style(" • Allowed 443/tcp ", success)
-gum_spin("Enable", "ufw enable")
-gum_style("Firewall enabled", success)
+gum_spin("Enable", "ufw --force enable", true)
+gum_style(" • {trust $ ufw status $}", success)
 
 gum_style("Add repositories", color)
 for repository in repositories {
