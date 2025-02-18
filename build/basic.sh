@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Written in [Amber](https://amber-lang.com/)
 # version: 0.4.0-alpha
-# date: 2025-02-18 12:41:10
+# date: 2025-02-18 15:47:04
 join__6_v0() {
     local list=("${!1}")
     local delimiter=$2
@@ -74,58 +74,70 @@ __3_success=150
 gum_style__87_v0 "Configure firewall" ${__2_color} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
 __AF_gum_style87_v0__19_1="$__AF_gum_style87_v0";
 echo "$__AF_gum_style87_v0__19_1" > /dev/null 2>&1
-gum_spin__88_v0 " • Allow 22/tcp" "ufw allow 22/tcp" 0 "dot";
+gum_spin__88_v0 "Allowing 22/tcp" "ufw allow 22/tcp" 0 "dot";
 __AF_gum_spin88_v0__20_1="$__AF_gum_spin88_v0";
 echo "$__AF_gum_spin88_v0__20_1" > /dev/null 2>&1
-gum_spin__88_v0 " • Allow 80/tcp" "ufw allow 80/tcp" 0 "dot";
-__AF_gum_spin88_v0__21_1="$__AF_gum_spin88_v0";
-echo "$__AF_gum_spin88_v0__21_1" > /dev/null 2>&1
-gum_spin__88_v0 " • Allow 443/tcp" "ufw allow 443/tcp" 0 "dot";
+gum_style__87_v0 " • Allowed 22/tcp " ${__3_success} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
+__AF_gum_style87_v0__21_1="$__AF_gum_style87_v0";
+echo "$__AF_gum_style87_v0__21_1" > /dev/null 2>&1
+gum_spin__88_v0 "Allowing 80/tcp" "ufw allow 80/tcp" 0 "dot";
 __AF_gum_spin88_v0__22_1="$__AF_gum_spin88_v0";
 echo "$__AF_gum_spin88_v0__22_1" > /dev/null 2>&1
-gum_spin__88_v0 " • Enable" "ufw enable" 0 "dot";
-__AF_gum_spin88_v0__23_1="$__AF_gum_spin88_v0";
-echo "$__AF_gum_spin88_v0__23_1" > /dev/null 2>&1
-gum_style__87_v0 "Add repositories" ${__2_color} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
+gum_style__87_v0 " • Allowed 80/tcp " ${__3_success} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
+__AF_gum_style87_v0__23_1="$__AF_gum_style87_v0";
+echo "$__AF_gum_style87_v0__23_1" > /dev/null 2>&1
+gum_spin__88_v0 "Allowing 443/tcp" "ufw allow 443/tcp" 0 "dot";
+__AF_gum_spin88_v0__24_1="$__AF_gum_spin88_v0";
+echo "$__AF_gum_spin88_v0__24_1" > /dev/null 2>&1
+gum_style__87_v0 " • Allowed 443/tcp " ${__3_success} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
 __AF_gum_style87_v0__25_1="$__AF_gum_style87_v0";
 echo "$__AF_gum_style87_v0__25_1" > /dev/null 2>&1
+gum_spin__88_v0 "Enable" "ufw enable" 0 "dot";
+__AF_gum_spin88_v0__26_1="$__AF_gum_spin88_v0";
+echo "$__AF_gum_spin88_v0__26_1" > /dev/null 2>&1
+gum_style__87_v0 "Firewall enabled" ${__3_success} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
+__AF_gum_style87_v0__27_1="$__AF_gum_style87_v0";
+echo "$__AF_gum_style87_v0__27_1" > /dev/null 2>&1
+gum_style__87_v0 "Add repositories" ${__2_color} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
+__AF_gum_style87_v0__29_1="$__AF_gum_style87_v0";
+echo "$__AF_gum_style87_v0__29_1" > /dev/null 2>&1
 for repository in "${__0_repositories[@]}"; do
     apt_add_repository_command__56_v0 "${repository}";
-    __AF_apt_add_repository_command56_v0__27_26="${__AF_apt_add_repository_command56_v0}";
-    gum_spin__88_v0 "${repository}" "${__AF_apt_add_repository_command56_v0__27_26}"" -y" 0 "dot";
-    __AF_gum_spin88_v0__27_5="$__AF_gum_spin88_v0";
-    echo "$__AF_gum_spin88_v0__27_5" > /dev/null 2>&1
+    __AF_apt_add_repository_command56_v0__31_26="${__AF_apt_add_repository_command56_v0}";
+    gum_spin__88_v0 "${repository}" "${__AF_apt_add_repository_command56_v0__31_26}"" -y" 0 "dot";
+    __AF_gum_spin88_v0__31_5="$__AF_gum_spin88_v0";
+    echo "$__AF_gum_spin88_v0__31_5" > /dev/null 2>&1
     gum_style__87_v0 " • ${repository}" ${__3_success} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
-    __AF_gum_style87_v0__28_5="$__AF_gum_style87_v0";
-    echo "$__AF_gum_style87_v0__28_5" > /dev/null 2>&1
+    __AF_gum_style87_v0__32_5="$__AF_gum_style87_v0";
+    echo "$__AF_gum_style87_v0__32_5" > /dev/null 2>&1
 done
 gum_style__87_v0 "Update repositories" ${__2_color} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
-__AF_gum_style87_v0__31_1="$__AF_gum_style87_v0";
-echo "$__AF_gum_style87_v0__31_1" > /dev/null 2>&1
+__AF_gum_style87_v0__35_1="$__AF_gum_style87_v0";
+echo "$__AF_gum_style87_v0__35_1" > /dev/null 2>&1
 apt_update_command__58_v0 ;
-__AF_apt_update_command58_v0__32_27="${__AF_apt_update_command58_v0}";
-gum_spin__88_v0 "Processing..." "${__AF_apt_update_command58_v0__32_27}"" -y" 0 "dot";
-__AF_gum_spin88_v0__32_1="$__AF_gum_spin88_v0";
-echo "$__AF_gum_spin88_v0__32_1" > /dev/null 2>&1
+__AF_apt_update_command58_v0__36_27="${__AF_apt_update_command58_v0}";
+gum_spin__88_v0 "Processing..." "${__AF_apt_update_command58_v0__36_27}"" -y" 0 "dot";
+__AF_gum_spin88_v0__36_1="$__AF_gum_spin88_v0";
+echo "$__AF_gum_spin88_v0__36_1" > /dev/null 2>&1
 gum_style__87_v0 "Upgrade packages" ${__2_color} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
-__AF_gum_style87_v0__34_1="$__AF_gum_style87_v0";
-echo "$__AF_gum_style87_v0__34_1" > /dev/null 2>&1
+__AF_gum_style87_v0__38_1="$__AF_gum_style87_v0";
+echo "$__AF_gum_style87_v0__38_1" > /dev/null 2>&1
 apt_upgrade_command__59_v0 ;
-__AF_apt_upgrade_command59_v0__35_27="${__AF_apt_upgrade_command59_v0}";
-gum_spin__88_v0 "Processing..." "${__AF_apt_upgrade_command59_v0__35_27}"" -y" 0 "dot";
-__AF_gum_spin88_v0__35_1="$__AF_gum_spin88_v0";
-echo "$__AF_gum_spin88_v0__35_1" > /dev/null 2>&1
+__AF_apt_upgrade_command59_v0__39_27="${__AF_apt_upgrade_command59_v0}";
+gum_spin__88_v0 "Processing..." "${__AF_apt_upgrade_command59_v0__39_27}"" -y" 0 "dot";
+__AF_gum_spin88_v0__39_1="$__AF_gum_spin88_v0";
+echo "$__AF_gum_spin88_v0__39_1" > /dev/null 2>&1
 gum_style__87_v0 "Install packages" ${__2_color} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
-__AF_gum_style87_v0__37_1="$__AF_gum_style87_v0";
-echo "$__AF_gum_style87_v0__37_1" > /dev/null 2>&1
+__AF_gum_style87_v0__41_1="$__AF_gum_style87_v0";
+echo "$__AF_gum_style87_v0__41_1" > /dev/null 2>&1
 for package in "${__1_packages[@]}"; do
     __AMBER_ARRAY_3=("${package}");
     apt_install_command__60_v0 __AMBER_ARRAY_3[@];
-    __AF_apt_install_command60_v0__39_23="${__AF_apt_install_command60_v0}";
-    gum_spin__88_v0 "${package}" "${__AF_apt_install_command60_v0__39_23}"" -y" 0 "dot";
-    __AF_gum_spin88_v0__39_5="$__AF_gum_spin88_v0";
-    echo "$__AF_gum_spin88_v0__39_5" > /dev/null 2>&1
+    __AF_apt_install_command60_v0__43_23="${__AF_apt_install_command60_v0}";
+    gum_spin__88_v0 "${package}" "${__AF_apt_install_command60_v0__43_23}"" -y" 0 "dot";
+    __AF_gum_spin88_v0__43_5="$__AF_gum_spin88_v0";
+    echo "$__AF_gum_spin88_v0__43_5" > /dev/null 2>&1
     gum_style__87_v0 " • ${package}" ${__3_success} $(echo  '-' 1 | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//');
-    __AF_gum_style87_v0__40_5="$__AF_gum_style87_v0";
-    echo "$__AF_gum_style87_v0__40_5" > /dev/null 2>&1
+    __AF_gum_style87_v0__44_5="$__AF_gum_style87_v0";
+    echo "$__AF_gum_style87_v0__44_5" > /dev/null 2>&1
 done

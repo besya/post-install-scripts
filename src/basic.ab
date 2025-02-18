@@ -17,10 +17,14 @@ let color = 212
 let success = 150
 
 gum_style("Configure firewall", color)
-gum_spin(" • Allow 22/tcp", "ufw allow 22/tcp")
-gum_spin(" • Allow 80/tcp", "ufw allow 80/tcp")
-gum_spin(" • Allow 443/tcp", "ufw allow 443/tcp")
-gum_spin(" • Enable", "ufw enable")
+gum_spin("Allowing 22/tcp", "ufw allow 22/tcp")
+gum_style(" • Allowed 22/tcp ", success)
+gum_spin("Allowing 80/tcp", "ufw allow 80/tcp")
+gum_style(" • Allowed 80/tcp ", success)
+gum_spin("Allowing 443/tcp", "ufw allow 443/tcp")
+gum_style(" • Allowed 443/tcp ", success)
+gum_spin("Enable", "ufw enable")
+gum_style("Firewall enabled", success)
 
 gum_style("Add repositories", color)
 for repository in repositories {
